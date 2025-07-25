@@ -1,1 +1,3 @@
-EURI_API_KEY="api_key"
+import os
+
+EURI_API_KEY = os.getenv("EURI_API_KEY")
