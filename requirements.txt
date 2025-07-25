@@ -4,3 +4,4 @@ pypdf
 faiss-cpu
 langchain
 euriai
+langchain-community==0.3.27
