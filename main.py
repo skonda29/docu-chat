@@ -4,6 +4,7 @@ from app.ui import pdf_uploader
 from app.pdf_utils import extract_text_from_pdf
 from app.vectorstore_utils import create_faiss_index, retrieve_relevant_docs
 from app.chat_utils import get_chat_model, ask_chat_model
+# from config import EURI_API_KEY
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import time
 
@@ -126,7 +127,8 @@ with st.sidebar:
                 st.session_state.vectorstore = vectorstore
 
                 # Initialize chat model
-                EURI_API_KEY=os.getenv("EURI_API_KEY")
+                # EURI_API_KEY=os.getenv("EURI_API_KEY")
+                EURI_API_KEY = st.secrets["EURI_API_KEY"]
                 chat_model = get_chat_model(EURI_API_KEY)
                 st.session_state.chat_model = chat_model
 
